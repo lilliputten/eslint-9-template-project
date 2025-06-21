@@ -37,12 +37,8 @@ module.exports = {
   ],
   importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
   plugins: [
-    /* // Remove unused imports (can't be used with the following `@ianvs/prettier-plugin-sort-imports`)
-     * // @see https://www.npmjs.com/package/prettier-plugin-organize-imports
-     * 'prettier-plugin-organize-imports',
-     */
     // Organize imports, @see https://www.npmjs.com/package/@ianvs/prettier-plugin-sort-imports#options
     '@ianvs/prettier-plugin-sort-imports',
-    'prettier-plugin-tailwindcss',
+    // 'prettier-plugin-tailwindcss',
   ],
 };

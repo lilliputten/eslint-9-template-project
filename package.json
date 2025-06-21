@@ -1,11 +1,19 @@
 {
-  "name": "eslint-9-test",
+  "name": "eslint-9-template-project",
   "version": "0.0.0",
-  "description": "Test to integrate & setup eslint v.9 to a diversified project",
+  "description": "Template project with the modern flat eslint v.9 configuration support",
   "main": "src/index.js",
   "timestamp": "2025.06.21, 22:29:00 +0300",
-  "changed": "2025.06.21, 22:29",
-  "keywords": [],
+  "changed": "2025.06.22, 00:22",
+  "keywords": [
+    "eslint",
+    "eslint9",
+    "typescript",
+    "javascript",
+    "prettier",
+    "config",
+    "template"
+  ],
   "author": "lilliputten@gmail.com",
   "license": "ISC",
   "engines": {
@@ -13,20 +21,32 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
-    "@types/jest": "^30.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
     "@types/node": "^24.0.3",
     "cross-env": "^7.0.3",
     "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-gitignore": "^0.1.0",
+    "eslint-plugin-prettier": "^5.5.0",
     "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-yml": "^1.18.0",
     "globals": "^16.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.5.3",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.1"
+    "typescript-eslint": "^8.34.1",
+    "yaml-eslint-parser": "^1.3.0"
   },
   "scripts": {
-    "type-check": "echo --Run typescript linter-- && pnpm --filter server run type-check && pnpm --filter client run type-check",
+    "type-check": "echo --Run typescript linter: client-- && tsc --pretty --noEmit",
     "eslint-debug": "echo --Lint sources with eslint in debug mode-- && cross-env DEBUG=eslint:cli-engine eslint .",
     "eslint-fix": "echo --Lint and auto-fix sources with eslint-- && eslint --fix .",
     "eslint": "echo --Lint sources with eslint-- && eslint .",
+    "prettier": "echo --Format code with prettier-- && prettier --check . | grep -v '(unchanged)' || true",
+    "prettier-fix": "echo --Format and fix code with prettier-- && prettier --write . | grep -v '(unchanged)' || true",
+    "format": "pnpm run prettier-fix && pnpm run eslint-fix",
+    "lint-all": "echo --Run all pre-commit check-ups-- && npm-run-all eslint type-check && echo --All check-ups passed--",
+    "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all prettier-fix lint-all && echo --All checks passed--",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

@@ -1,11 +1,11 @@
 <!--
  @since 2025.06.21, 22:25
- @changed 2025.06.21, 22:25
+ @changed 2025.06.22, 00:34
 -->
 
-# ESLint v.9 integration test
+# ESLint v.9 template project
 
-Test to integrate & setup eslint v.9 to a diversified project.
+A project for testing eslint v.9 flat configuration in a project with different file types.
 
 ## Build info (auto-generated)
 
@@ -17,7 +17,7 @@ Test to integrate & setup eslint v.9 to a diversified project.
 
 ## Installation
 
-Just run `pnpm install` to install all the dependencies for both workspaces.
+Just run `pnpm install` to install all the dependencies.
 
 ## Local development
 
@@ -29,16 +29,10 @@ pnpm dev
 
 ## Maintenance tools
 
-Run prettier and all the linters for both workspaces:
+Run prettier and all the linters:
 
 ```bash
 pnpm check-all
-```
-
-Run tests:
-
-```bash
-pnpm test
 ```
 
 ## Deploy integration
