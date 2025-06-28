@@ -7,7 +7,7 @@ let g:ctrlp_custom_ignore['dir'] = substitute(g:ctrlp_custom_ignore['dir'], ')\$
 
 " Disable tsserver diagnostics for TypeScript files
 let g:coc_user_config = {
-  \ 'tsserver.enable': v:false,
+  \ 'tsserver.enable': v:true,
   \ 'eslint.enable': v:true,
   \ 'eslint.validate': ['typescript', 'typescriptreact', 'javascript', 'javascriptreact'],
   \ }

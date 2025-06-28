@@ -19,6 +19,10 @@ export default [
   {
     ignores: readGitignoreFiles({ cwd: __dirname }),
   },
+
+  // TypeScript configuration
+  ...tseslint.configs.recommended,
+
   // Base JS configuration for all JavaScript/TypeScript files
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
@@ -32,20 +36,18 @@ export default [
     },
     rules: {
       ...js.configs.recommended.rules,
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      semi: ['warn', 'always'],
       'no-console': 'warn',
       'no-debugger': 'warn',
       'no-extra-semi': 'warn',
       'no-redeclare': 'warn',
       'no-undef': 'error',
       'no-unreachable': 'warn',
+      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'prefer-const': 'warn',
-      semi: ['warn', 'always'],
+      '@typescript-eslint/no-unused-vars': 'warn',
     },
   },
-
-  // TypeScript configuration
-  ...tseslint.configs.recommended,
 
   // React configuration with version specified
   {
